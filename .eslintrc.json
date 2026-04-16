@@ -1,0 +1,43 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "."
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "no-empty-pattern":                                "off",
+    "@typescript-eslint/no-explicit-any":              "error",
+    "@typescript-eslint/no-unused-vars":               ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/explicit-function-return-type": "off",
+
+    "no-console": "error",
+
+    "@typescript-eslint/naming-convention": [
+      "error",
+      { "selector": "class",     "format": ["PascalCase"] },
+      { "selector": "interface", "format": ["PascalCase"] },
+      {
+        "selector": "variable",
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"],
+        "leadingUnderscore": "allow"
+      },
+      { "selector": "function",  "format": ["camelCase", "PascalCase"] },
+      { "selector": "parameter", "format": ["camelCase"], "leadingUnderscore": "allow" }
+    ],
+
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "CallExpression[callee.property.name='locator'] > Literal[value=/^\\/\\//]",
+        "message": "XPath locators are forbidden. Use getByRole, getByText, getByLabel, or getByTestId."
+      }
+    ]
+  },
+  "ignorePatterns": [".bdd-generated/", "dist/", "scripts/"]
+}

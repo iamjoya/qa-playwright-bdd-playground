@@ -1,0 +1,15 @@
+{
+  "individual": {
+    "valid": {
+      "firstName":      "Auto",
+      "lastName":       "TestIndividual",
+      "expectedInList": "Auto TestIndividual"
+    }
+  },
+  "business": {
+    "valid": {
+      "businessName":   "Auto TestBusiness Ltd",
+      "expectedInList": "Auto TestBusiness Ltd"
+    }
+  }
+}

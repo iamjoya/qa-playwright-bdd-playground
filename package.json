@@ -1,0 +1,52 @@
+{
+  "name": "agentic-qa",
+  "version": "1.0.0",
+  "description": "QA Automation Framework — UI, API & Visual Regression",
+  "private": true,
+  "scripts": {
+    "prepare": "husky",
+    "pretest": "node scripts/clean-reports.js",
+    "test": "playwright test",
+    "test:smoke": "node scripts/clean-reports.js && playwright test --grep @smoke",
+    "test:regression": "node scripts/clean-reports.js && playwright test --grep @regression",
+    "test:ui": "node scripts/clean-reports.js && playwright test --project=ui-chrome",
+    "test:api": "node scripts/clean-reports.js && playwright test --project=api",
+    "test:orangehrm": "node scripts/clean-reports.js && TEST_ENV=dev playwright test --grep @orangehrm",
+    "test:visual": "node scripts/clean-reports.js && playwright test --project=visual",
+    "test:visual:update": "node scripts/clean-reports.js && playwright test --project=visual --update-snapshots",
+    "test:env:staging": "node scripts/clean-reports.js && TEST_ENV=staging playwright test",
+    "test:env:prod": "node scripts/clean-reports.js && TEST_ENV=prod playwright test",
+    "test:headed": "node scripts/clean-reports.js && playwright test --headed",
+    "test:debug": "PWDEBUG=1 playwright test",
+    "test:ci": "npm run pretest && playwright test --workers=100% && npm run allure:generate",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "allure:serve": "allure serve allure-results",
+    "report": "npm run allure:generate && npm run allure:open",
+    "bdd:generate": "bddgen",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "install:browsers": "playwright install --with-deps chromium firefox webkit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.12.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "allure-commandline": "^2.27.0",
+    "allure-js-commons": "^3.0.0",
+    "allure-playwright": "^3.0.0",
+    "dotenv": "^16.4.0",
+    "eslint": "^8.57.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "playwright-bdd": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix",
+      "tsc --noEmit --skipLibCheck"
+    ]
+  }
+}

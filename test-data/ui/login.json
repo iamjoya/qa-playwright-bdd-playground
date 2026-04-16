@@ -1,0 +1,10 @@
+{
+  "admin": {
+    "expectedLandingUrl": "/admin/overview"
+  },
+  "invalid": {
+    "email": "no-account-xk9z2@nonexistent-qa-domain.test",
+    "password": "WrongPass123!",
+    "expectedError": "Wrong email or password"
+  }
+}

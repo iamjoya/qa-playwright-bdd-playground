@@ -1,0 +1,19 @@
+{
+  "baseUrl": "https://brook.stage.onperformativ.com/",
+  "apiBaseUrl": "https://api.dev.example.com",
+  "credentials": {
+    "adminEmail":    "${ADMIN_EMAIL}",
+    "adminPassword": "${ADMIN_PASSWORD}"
+  },
+  "orangehrmBaseUrl": "https://opensource-demo.orangehrmlive.com",
+  "orangehrmCredentials": {
+    "adminUsername": "${ORANGEHRM_ADMIN_USERNAME}",
+    "adminPassword": "${ORANGEHRM_ADMIN_PASSWORD}"
+  },
+  "reqresBaseUrl":   "${REQRES_BASE_URL}",
+  "reqresProjectId": "${REQRES_PROJECT_ID}",
+  "reqresCredentials": {
+    "apiKey": "${REQRES_API_KEY}",
+    "env":    "${REQRES_ENV}"
+  }
+}

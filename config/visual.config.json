@@ -1,0 +1,6 @@
+{
+  "threshold": 0.2,
+  "maxDiffPixels": 100,
+  "animations": "disabled",
+  "fullPage": false
+}

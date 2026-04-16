@@ -1,0 +1,56 @@
+{
+  "nonExistentId": "00000000-0000-0000-0000-000000000000",
+  "invalidApiKey":  "invalid-api-key-000000000000000000000000000000000000000000000000000000000000",
+
+  "payloads": {
+    "valid": {
+      "data": {
+        "name": "Wireless Headphones",
+        "price": 59.99,
+        "category": "Electronics",
+        "in_stock": true
+      }
+    },
+    "updateProduct": {
+      "data": {
+        "name": "Wireless Headphones Pro",
+        "price": 79.99,
+        "category": "Electronics",
+        "in_stock": false
+      }
+    }
+  },
+
+  "expectedResponses": {
+    "createProduct": {
+      "created": {
+        "statusCode": 201,
+        "bodyContains": { "project_id": 12942 }
+      },
+      "noApiKey":    { "statusCode": 401 },
+      "invalidApiKey": { "statusCode": 403 }
+    },
+    "getProduct": {
+      "found": {
+        "statusCode": 200,
+        "bodyContains": { "project_id": 12942 }
+      },
+      "notFound": { "statusCode": 404 }
+    },
+    "updateProduct": {
+      "updated": {
+        "statusCode": 200,
+        "bodyContains": {
+          "project_id": 12942,
+          "data": {
+            "name": "Wireless Headphones Pro",
+            "price": 79.99,
+            "category": "Electronics",
+            "in_stock": false
+          }
+        }
+      },
+      "notFound": { "statusCode": 404 }
+    }
+  }
+}

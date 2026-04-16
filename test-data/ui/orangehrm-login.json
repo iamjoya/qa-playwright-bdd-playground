@@ -1,0 +1,19 @@
+{
+  "admin": {
+    "expectedLandingUrl": "/web/index.php/dashboard/index"
+  },
+  "invalidPassword": {
+    "username": "Admin",
+    "password": "WrongPass999!",
+    "expectedError": "Invalid credentials"
+  },
+  "invalidUsername": {
+    "username": "NoSuchUser_xk9z",
+    "password": "admin123",
+    "expectedError": "Invalid credentials"
+  },
+  "emptyErrors": {
+    "username": "Required",
+    "password": "Required"
+  }
+}
