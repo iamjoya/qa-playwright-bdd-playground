@@ -129,9 +129,6 @@ npm run test:smoke
 # Open the Allure report
 npm run report
 ```
-<img width="1437" height="730" alt="Screenshot 2026-04-16 at 9 01 27 PM" src="https://github.com/user-attachments/assets/9a1cb016-0af2-4052-b1c8-b2c9ded0b68f" />
-
-<img width="1435" height="729" alt="Screenshot 2026-04-16 at 9 01 19 PM" src="https://github.com/user-attachments/assets/31173d07-cb01-4fd8-a82b-faf439a2e313" />
 
 > **Tip:** Run `npm run bdd:generate` again any time you add or rename a feature file or step definition.
 
