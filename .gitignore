@@ -29,6 +29,14 @@ npm-debug.log*
 .env
 .env.*
 !.env.example
+config/env/dev.json
+config/env/prod.json
+config/env/staging.json
+
+# Visual regression — environment-specific baselines are committed,
+# but raw OS snapshot caches are not
+snapshots/dev/features/
+*.snap
 
 # macOS
 **/.DS_Store
