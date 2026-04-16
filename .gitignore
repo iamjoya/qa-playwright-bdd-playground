@@ -10,7 +10,6 @@ allure-report/
 test-results/
 playwright-report/
 .bdd-generated/
-.claude/
 .playwright/
 .playwright-mcp/
 
@@ -46,5 +45,4 @@ snapshots/dev/features/
 .idea/
 
 # ---- Files that MUST be committed ----
-# snapshots/ — baseline images generated on a stable reference environment
 # config/env/*.json — safe: all secrets are ${VAR} references, not plain values
